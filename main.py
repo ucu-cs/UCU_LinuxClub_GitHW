@@ -17,6 +17,9 @@ def get_character():
 
 
 def get_quote():
+    """
+    This function is responsible for returning a quote (str)
+    """
     with open("quotes.json", "r") as file:
         quotes = json.load(file)
         quote_of_day = " ".join(choice(quotes))
@@ -25,5 +28,7 @@ def get_quote():
 
 
 if __name__ == "__main__":
+    character = get_character()
+    print(f"Character name:\t{character}")
     print("Quote of the day:\n\n\n")
-    getattr(cowsay, get_character())(get_quote())
+    getattr(cowsay, character)(get_quote())
