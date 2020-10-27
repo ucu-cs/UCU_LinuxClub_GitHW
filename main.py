@@ -15,9 +15,18 @@ def get_character():
     return CHARACTERS[-1]
 
 def get_quote():
+    """
+    Responsible for getting a quote.
+    Args:
+
+    Returns:
+        str - a quote
+    """
     return "This is quote from latest master branch! Random quotes coming soon!"
 
 if __name__ == "__main__":
-    print("Quote of the day:\n\n\n")
-    getattr(cowsay,get_character())(get_quote())
+    character = get_character()
+    print(f"{character.capitalize()} says:\n\n\n")
+
+    getattr(cowsay,character)(get_quote())
 
