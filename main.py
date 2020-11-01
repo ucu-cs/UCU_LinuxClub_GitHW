@@ -1,7 +1,6 @@
 import cowsay
 import json
-from os import system, name
-from random import choice
+import random
 
 CHARACTERS = ["beavis", "cheese", "daemon", "cow", "dragon", "ghostbusters", "kitty", "meow", "milk", "stegosaurus",
               "stimpy", "turkey", "turtle", "tux"]
@@ -13,22 +12,22 @@ def get_character():
     Returns:
         str - cowsay character
     """
-    return CHARACTERS[-1]
+    return random.choice(CHARACTERS)
 
 
 def get_quote():
     """
-    This function is responsible for returning a quote (str)
+    Responsible for getting a quote.
+    Args:
+
+    Returns:
+        str - a quote
     """
-    with open("quotes.json", "r") as file:
-        quotes = json.load(file)
-        quote_of_day = " ".join(choice(quotes))
-        return quote_of_day
-
-
+    return "This is quote from latest master branch! Random quotes coming soon!"
 
 if __name__ == "__main__":
     character = get_character()
-    print(f"Character name:\t{character}")
-    print("Quote of the day:\n\n\n")
-    getattr(cowsay, character)(get_quote())
+    print(f"{character.capitalize()} says:\n\n\n")
+
+    getattr(cowsay,character)(get_quote())
+
