@@ -1,4 +1,5 @@
 from os import system, name
+from random import choice
 import cowsay
 import json
 
@@ -12,7 +13,7 @@ def get_character():
     Returns:
         str - cowsay character
     """
-    return CHARACTERS[-1]
+    return choice(CHARACTERS)
 
 def get_quote():
     """
