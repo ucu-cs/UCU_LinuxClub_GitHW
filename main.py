@@ -1,4 +1,5 @@
 from os import system, name
+from random import choice
 import cowsay
 import json
 
@@ -12,7 +13,8 @@ def get_character():
     Returns:
         str - cowsay character
     """
-    return CHARACTERS[-1]
+    return choice(CHARACTERS)
+
 
 def get_quote():
     """
@@ -24,9 +26,9 @@ def get_quote():
     """
     return "This is quote from latest master branch! Random quotes coming soon!"
 
+
 if __name__ == "__main__":
     character = get_character()
     print(f"{character.capitalize()} says:\n\n\n")
 
-    getattr(cowsay,character)(get_quote())
-
+    getattr(cowsay, character)(get_quote())
