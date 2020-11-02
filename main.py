@@ -16,6 +16,7 @@ def get_character():
     return choice(CHARACTERS[-1])
 
 
+
 def get_quote():
     """
     Responsible for getting a quote.
@@ -33,6 +34,6 @@ def get_quote():
 
 if __name__ == "__main__":
     character = get_character()
-    print(f"{character.capitalize()} says:\n\n\n")
-
-    getattr(cowsay,character)(get_quote())
+    print(f"Character name:\t{character}")
+    print("Quote of the day:\n\n\n")
+    getattr(cowsay, character)(get_quote())
