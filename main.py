@@ -13,18 +13,23 @@ def get_character():
     Returns:
         str - cowsay character
     """
-    return CHARACTERS[-1]
+    return choice(CHARACTERS[-1])
+
 
 
 def get_quote():
     """
-    This function is responsible for returning a quote (str)
+    Responsible for getting a quote.
+    Args:
+
+    Returns:
+        str - a quote
     """
+
     with open("quotes.json", "r") as file:
         quotes = json.load(file)
         quote_of_day = " ".join(choice(quotes))
         return quote_of_day
-
 
 
 if __name__ == "__main__":
