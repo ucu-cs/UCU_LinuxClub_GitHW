@@ -1,6 +1,7 @@
 from os import system, name
 import cowsay
 import json
+import random
 
 CHARACTERS = ["beavis", "cheese", "daemon", "cow", "dragon", "ghostbusters", "kitty", "meow", "milk", "stegosaurus",
               "stimpy", "turkey", "turtle", "tux"]
@@ -12,7 +13,8 @@ def get_character():
     Returns:
         str - cowsay character
     """
-    return CHARACTERS[-1]
+    character = random.choice(CHARACTERS)
+    return character
 
 def get_quote():
     """
