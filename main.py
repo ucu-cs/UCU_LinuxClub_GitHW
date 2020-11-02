@@ -1,7 +1,7 @@
 import cowsay
 import json
 from os import system, name
-from random import choice
+import random
 
 CHARACTERS = ["beavis", "cheese", "daemon", "cow", "dragon", "ghostbusters", "kitty", "meow", "milk", "stegosaurus",
               "stimpy", "turkey", "turtle", "tux"]
@@ -13,7 +13,7 @@ def get_character():
     Returns:
         str - cowsay character
     """
-    return CHARACTERS[-1]
+    return random.choice(CHARACTERS)
 
 
 def get_quote():
@@ -22,7 +22,7 @@ def get_quote():
     """
     with open("quotes.json", "r") as file:
         quotes = json.load(file)
-        quote_of_day = " ".join(choice(quotes))
+        quote_of_day = " ".join(random.choice(quotes))
         return quote_of_day
 
 
